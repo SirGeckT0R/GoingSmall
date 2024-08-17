@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class KeyboardManager : MonoBehaviour
 {
-
     public delegate void EnterPressed(string message);
     public static event EnterPressed OnEnterPressed;
-
 
     private string _typedMessage;
     private void OnEnable()

@@ -1,14 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    List<string> answers;
-    private void Start()
-    {
-        answers = new List<string>() { "FF", "Fu"};
-    }
+    [SerializeField] private List<string> answers = new List<string>();
 
     private void OnEnable()
     {
@@ -22,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckMessage(string message)
     {
+        message = Regex.Replace(message.Trim(), @"\s+", " ");
         Debug.Log(message.Equals(answers[0]));
     }
 }
