@@ -5,22 +5,27 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Boundaries : MonoBehaviour
 {
-    [SerializeField] private BoxCollider2D collider;
+    [SerializeField] protected Transform Area;
     protected Vector2 AreaBounds;
     protected Vector2 SpriteSize;
 
     void Start()
     {
-        AreaBounds = collider.bounds.size / 2;
+        AreaBounds = Area.GetComponent<Collider2D>().bounds.size / 2;
         SpriteSize = GetComponent<SpriteRenderer>().bounds.size / 2;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, (AreaBounds.x * -1) + SpriteSize.x, AreaBounds.x - SpriteSize.x);
-        viewPos.y = Mathf.Clamp(viewPos.y, (AreaBounds.y * -1) + SpriteSize.y, AreaBounds.y - SpriteSize.y);
+        viewPos.x = Mathf.Clamp(viewPos.x,  
+            (Area.position.x - AreaBounds.x) + SpriteSize.x, 
+            (Area.position.x + AreaBounds.x) - SpriteSize.x);
+
+        viewPos.y = Mathf.Clamp(viewPos.y, 
+            (Area.position.y - AreaBounds.y) + SpriteSize.y, 
+            (Area.position.y + AreaBounds.y) - SpriteSize.y);
+
         transform.position = viewPos;
     }
 }
