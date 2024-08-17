@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class KeyboardInteraction : ZoneInteraction
+public class KeyboardButtonInteraction : ZoneInteraction
 {
     [SerializeField] private KeyCode key = KeyCode.None;
     [SerializeField] private float cooldown = 0.8f;
