@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class KeyboardManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private string _typedMessage;
+    private void OnEnable()
     {
-        
+        KeyboardInteraction.OnButtonPressed += ButtonPressed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        KeyboardInteraction.OnButtonPressed -= ButtonPressed;
+    }
+
+    private void ButtonPressed(KeyCode key)
+    {
+        _typedMessage += key == KeyCode.Space ? " " : key.ToString();
+        Debug.Log(_typedMessage);
     }
 }

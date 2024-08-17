@@ -4,8 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class KeyboardInteraction : ZoneInteraction
 {
-    [SerializeField] private float cooldown = 0.5f;
+    [SerializeField] private KeyCode key = KeyCode.None;
+    [SerializeField] private float cooldown = 0.8f;
     private float timer = 0f;
+
+    public delegate void ButtonPress(KeyCode pressedKey);
+    public static event ButtonPress OnButtonPressed;
 
     void Update()
     {
@@ -22,6 +26,7 @@ public class KeyboardInteraction : ZoneInteraction
 
     protected override void Execute()
     {
+        OnButtonPressed(key);
         Debug.Log("Pressed the button");
     }
 }
