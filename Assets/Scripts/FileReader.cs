@@ -6,7 +6,7 @@ using UnityEngine;
 public class FileReader : MonoBehaviour
 {
     [SerializeField] private TextAsset file;
-    [SerializeField] private StoryTextList storyList = new StoryTextList();
+    public StoryTextList storyList = new StoryTextList();
 
     [System.Serializable]
     public class StoryText
