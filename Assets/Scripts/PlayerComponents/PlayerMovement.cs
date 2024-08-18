@@ -17,10 +17,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        _verticalInput = Input.GetAxisRaw("Vertical");
-        _horizontalInput = Input.GetAxisRaw("Horizontal");
-        Vector2 fd = new Vector2(_horizontalInput * speed, _verticalInput * speed);
-        _playerRigidbody.velocity = fd;
+        Vector2 movementVector = new Vector2();
+        if ((_verticalInput = Input.GetAxisRaw("Vertical")) != 0)
+        {
+            movementVector = new Vector2(_horizontalInput * speed, 0);
+        }
+        else if((_horizontalInput = Input.GetAxisRaw("Horizontal")) !=0)
+        {
+            movementVector = new Vector2(0, _verticalInput * speed);
+        }
+        _playerRigidbody.velocity = movementVector;
         Flip();
     }
 
