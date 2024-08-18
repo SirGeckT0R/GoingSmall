@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float _verticalInput;
     private float _horizontalInput;
     [SerializeField] private float speed = 10f;
-    private bool IsFacingRight = true;
+    private bool IsFacingRight = false;
     void Awake()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
