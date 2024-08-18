@@ -10,41 +10,38 @@ using static FileReader;
 [RequireComponent(typeof(FileReader))]
 public class StoryManager : MonoBehaviour
 {
+    public delegate void StoryLoaded(GameText startText);
+    public static event StoryLoaded OnStoryLoaded;
+
     [SerializeField] private TextMeshProUGUI textElement;
-    private FileReader.StoryTextList _storyList;
+    public List<GameText> storyList;
 
-    private bool isFirst = true;
-    private float timer = 0f;
-    private float messageCooldown = 3f;
 
-    void Start()
+    private void OnEnable()
     {
-
+        UIManager.OnGameStarted += ShowStoryText;
     }
 
+    private void OnDisable()
+    {
+        UIManager.OnGameStarted -= ShowStoryText;
+    }
     private void Update()
-    { 
-        if (_storyList == null || _storyList.list == null)
+    {
+        if (storyList.Count == 0)
         {
-            _storyList = GetComponent<FileReader>().storyList;
+            storyList = GetComponent<FileReader>().GameTextList.storyList;
+            if(storyList != null)
+            {
+                OnStoryLoaded(storyList[0]);
+            }
             return;
         }
 
-        if (isFirst)
-        {
-            StartCoroutine(ShowInSucession(new Queue<FileReader.StoryText>(_storyList.list.GetRange(0, 2))));
-            isFirst = false;
-        }
     }
 
-    private IEnumerator ShowInSucession(Queue<FileReader.StoryText> storyTexts)
-    {
-        while (storyTexts.Count > 0)
-        {
-            yield return new WaitForSeconds(2f);
-            textElement.text = storyTexts.Dequeue().text;
-            Debug.Log(textElement.text);
-
-        }
+    private void ShowStoryText()
+    { 
+        StartCoroutine(TypeWriterEffect.ShowInSucession(new Queue<FileReader.GameText>(storyList.GetRange(1, 5)), textElement, 0.05f));
     }
 }

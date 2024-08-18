@@ -1,6 +1,22 @@
 {
-    "list": [
-	{ "text": "Hey" },
-	{ "text": "This is test" }
+    "storyList": [
+	{ "text": "Whoa, that medicine they gave me is making me sleepy.$ I guess that’s why they are testing it before they could sell that as a headache drug.$ Anyway, better not miss the date with Alice.$ After all, I only applied for testing so I can get some money to buy us movie tickets.$ I am just going to lie down for a moment..." },
+	{ "text": "Wha-What?! What is happening?! Why am I tiny?!" },
+	{ "text": "Damn it! Must be a side effect from that medicine!" },
+	{ "text": "I need to call Dr. Hendricks, see if he could revert this somehow…" },
+	{ "text": "Oh no! Alice is texting me right now!" },
+	{ "text": "If I don’t answer, she will dump me!" },
+	{ "text": "I need to say something. (yes)" },
+	{ "text": "No need to worry her, I better say I’m fine. (i am fine)" },
+	{ "text": "The movie start at 9, can’t make a mistake here! (we meet at 9 near your place)" },
+	{ "text": "Phew, that was close." },
+	{ "text": "Oh! I forgot to buy the tickets!" },
+	{ "text": "Can anything go right today?!" },
+	{ "text": "Now I need to call Dr. Hendricks." },
+	{ "text": "If I remember correctly, his number is +44 672 213 85" }
+],
+	"chatList": [
+	{ "text": "TestChat" },
+	{ "text": "This is chattest" }
 ]
 }

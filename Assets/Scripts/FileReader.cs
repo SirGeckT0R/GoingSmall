@@ -6,23 +6,24 @@ using UnityEngine;
 public class FileReader : MonoBehaviour
 {
     [SerializeField] private TextAsset file;
-    public StoryTextList storyList = new StoryTextList();
+    public TextList GameTextList = new TextList();
 
     [System.Serializable]
-    public class StoryText
+    public class GameText
     {
         public string text;
     }
 
     [System.Serializable]
-    public class StoryTextList
+    public class TextList
     {
-        public List<StoryText> list;
+        public List<GameText> storyList;
+        public List<GameText> chatList;
     }
 
     void Start()
     {
-        storyList = JsonUtility.FromJson<StoryTextList>(file.text);
+        GameTextList = JsonUtility.FromJson<TextList>(file.text);
     }
 
 }
