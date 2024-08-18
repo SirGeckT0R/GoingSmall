@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _playerRigidbody;
     private Animator _playerAnimator;
     private Vector2 _movementInput;
-    [SerializeField] private float speed = 10f;
-    //private bool IsFacingRight = true;
+    [SerializeField] private float runningSpeed = 10f;
+    [SerializeField] private float pushingSpeed = 5f;
+    private bool _isTouchingOtherObject = false;
     void Awake()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
@@ -23,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (_movementInput.magnitude >= 0.01)
         { 
-            _playerAnimator.SetFloat("Vertical", _movementInput.y);
             _playerAnimator.SetFloat("Horizontal", _movementInput.x);
+            _playerAnimator.SetFloat("Vertical", _movementInput.y);
         }
 
         if (Mathf.Abs(_movementInput.y) > Mathf.Abs(_movementInput.x))
@@ -41,17 +42,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _playerRigidbody.MovePosition(_playerRigidbody.position + _movementInput * speed * Time.deltaTime);
+        _playerRigidbody.MovePosition(_playerRigidbody.position + _movementInput * (_isTouchingOtherObject ? pushingSpeed : runningSpeed) * Time.deltaTime);
     }
 
-    //private void Flip()
-    //{
-    //    if(IsFacingRight && _movementInput.x < 0f || !IsFacingRight && _movementInput.x > 0f)
-    //    {
-    //        IsFacingRight = !IsFacingRight;
-    //        Vector3 localScale = transform.localScale;
-    //        localScale.x *= -1f;
-    //        transform.localScale = localScale;
-    //    }
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _isTouchingOtherObject = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _isTouchingOtherObject = false;
+    }
 }

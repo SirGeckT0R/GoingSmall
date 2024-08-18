@@ -7,6 +7,7 @@ using UnityEngine;
 public class MouseInteraction : ZoneInteraction
 {
     private CursorInteraction _cursor;
+    [SerializeField] private GameObject PopUp;
     private void Start()
     {
         _cursor = transform.parent.GetComponent<CursorHandling>().cursorTransform.GetComponent<CursorInteraction>();
@@ -18,5 +19,30 @@ public class MouseInteraction : ZoneInteraction
             Debug.Log("Left mouse clicked");
             _cursor.Interact();
         }
-    }   
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (_interactionTag.Equals(collision.gameObject.tag))
+        {
+            _isObjectInside = true;
+            if (PopUp != null)
+            {
+                PopUp.SetActive(true);
+            }
+            Execute();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (_interactionTag.Equals(collision.gameObject.tag))
+        {
+            _isObjectInside = false;
+            if (PopUp != null)
+            {
+                PopUp.SetActive(false);
+            }
+        }
+    }
 }
