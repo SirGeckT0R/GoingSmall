@@ -13,7 +13,7 @@ public class KeyboardButtonInteraction : ZoneInteraction
 
     void Update()
     {
-        if (_isPlayerInside)
+        if (_isObjectInside)
         {
             timer += Time.deltaTime;
             if(timer > cooldown)

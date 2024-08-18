@@ -4,15 +4,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class ZoneInteraction : MonoBehaviour
-{
-    protected bool _isPlayerInside = false;
+{   
+    protected bool _isObjectInside = false;
 
     [SerializeField] protected string _interactionTag = "";
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (_interactionTag.Equals(collision.gameObject.tag))
         {
-            _isPlayerInside = true;
+            _isObjectInside = true;
             Execute();
         }
     }
@@ -21,7 +21,7 @@ public class ZoneInteraction : MonoBehaviour
     {
         if (_interactionTag.Equals(collision.gameObject.tag))
         {
-            _isPlayerInside = false;
+            _isObjectInside = false;
         }
     }
 
