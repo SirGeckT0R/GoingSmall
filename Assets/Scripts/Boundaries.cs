@@ -25,7 +25,7 @@ public class Boundaries : MonoBehaviour
         viewPos.y = Mathf.Clamp(viewPos.y, 
             (Area.position.y - AreaBounds.y) + SpriteSize.y, 
             (Area.position.y + AreaBounds.y) - SpriteSize.y);
-
+       
         transform.position = viewPos;
     }
 }

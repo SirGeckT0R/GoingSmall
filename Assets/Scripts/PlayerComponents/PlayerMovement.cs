@@ -6,42 +6,52 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _playerRigidbody;
-    private float _verticalInput;
-    private float _horizontalInput;
+    private Animator _playerAnimator;
+    private Vector2 _movementInput;
     [SerializeField] private float speed = 10f;
-    private bool IsFacingRight = true;
+    //private bool IsFacingRight = true;
     void Awake()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
+        _playerAnimator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        _verticalInput = Input.GetAxisRaw("Vertical");
-        _horizontalInput = Input.GetAxisRaw("Horizontal");
+        _movementInput.x = Input.GetAxisRaw("Horizontal");
+        _movementInput.y = Input.GetAxisRaw("Vertical");
 
-        if (Mathf.Abs(_verticalInput) > Mathf.Abs(_horizontalInput))
+        if (_movementInput.magnitude >= 0.01)
+        { 
+            _playerAnimator.SetFloat("Vertical", _movementInput.y);
+            _playerAnimator.SetFloat("Horizontal", _movementInput.x);
+        }
+
+        if (Mathf.Abs(_movementInput.y) > Mathf.Abs(_movementInput.x))
         {
-            _horizontalInput = 0;
+            _movementInput.x = 0;
         }
         else
         {
-            _verticalInput = 0;
+            _movementInput.y = 0;
         }
 
-        Vector2 movementVector = new Vector2(_horizontalInput * speed, _verticalInput * speed);
-        _playerRigidbody.velocity = movementVector;
-        Flip();
+        _playerAnimator.SetFloat("Speed", _movementInput.magnitude);
     }
 
-    private void Flip()
+    private void FixedUpdate()
     {
-        if(IsFacingRight && _horizontalInput < 0f || !IsFacingRight && _horizontalInput > 0f)
-        {
-            IsFacingRight = !IsFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
-        }
+        _playerRigidbody.MovePosition(_playerRigidbody.position + _movementInput * speed * Time.deltaTime);
     }
+
+    //private void Flip()
+    //{
+    //    if(IsFacingRight && _movementInput.x < 0f || !IsFacingRight && _movementInput.x > 0f)
+    //    {
+    //        IsFacingRight = !IsFacingRight;
+    //        Vector3 localScale = transform.localScale;
+    //        localScale.x *= -1f;
+    //        transform.localScale = localScale;
+    //    }
+    //}
 }
