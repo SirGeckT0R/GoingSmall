@@ -48,10 +48,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _isTouchingOtherObject = true;
+        _playerAnimator.SetBool("IsPushing", true);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         _isTouchingOtherObject = false;
+        _playerAnimator.SetBool("IsPushing", false);
     }
 }
