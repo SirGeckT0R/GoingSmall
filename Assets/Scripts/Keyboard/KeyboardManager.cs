@@ -30,7 +30,7 @@ public class KeyboardManager : MonoBehaviour
         }
         else
         {
-            _typedMessage += key == KeyCode.Space ? " " : key.ToString();
+            _typedMessage += key == KeyCode.Space ? " " : key.ToString().Replace("Alpha","");
         }
         Debug.Log(_typedMessage);
     }

@@ -4,17 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
+public enum E_ALIGNMENT
+{
+    LEFT,
+    RIGHT, 
+    TOP, 
+    BOTTOM
+}
+
 public class ChatViewHandling : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    [SerializeField] private GameObject messagePrefab;
     void Update()
     {
+    }
+
+    public void AddMessage(string text, E_ALIGNMENT alignment, Color color)
+    {
+
+
+
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
     }
 }

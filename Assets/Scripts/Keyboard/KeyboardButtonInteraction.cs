@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 
@@ -5,11 +6,17 @@ using UnityEngine;
 public class KeyboardButtonInteraction : ZoneInteraction
 {
     [SerializeField] private KeyCode key = KeyCode.None;
+    [SerializeField] private TextMeshProUGUI keyText;
     [SerializeField] private float cooldown = 0.8f;
     private float timer = 0f;
 
     public delegate void ButtonPress(KeyCode pressedKey);
     public static event ButtonPress OnButtonPressed;
+
+    private void Start()
+    {
+        keyText.text = key.ToString().Replace("Alpha","");
+    }
 
     void Update()
     {
