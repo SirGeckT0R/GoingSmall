@@ -37,7 +37,7 @@ public class ScreenManager : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         
-        _currentScreen = _collectionOfScreens.Find((screen)=>screen.name.ToLower().Replace("_","").Contains("desktop"));
+        _currentScreen = _collectionOfScreens.Find((screen)=>screen.name.ToLower().Replace("_","").Contains("chat"));
         _currentScreen?.SetActive(true);
     }
 

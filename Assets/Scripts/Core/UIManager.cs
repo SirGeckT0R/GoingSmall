@@ -31,11 +31,6 @@ public class UIManager : MonoBehaviour
         StartScreenUI?.SetActive(true);
     }
 
-    private void Update()
-    {
-       
-    }
-
     private IEnumerator HideStartScreen(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -43,11 +38,9 @@ public class UIManager : MonoBehaviour
         OnGameStarted();
     }
 
-    private void ShowStartText(GameText startText)
+    private void ShowStartText(Queue<GameText> startTexts, int amountOfNonOptionalTexts)
     {
-        Queue<GameText> queue = new Queue<GameText>();
-        queue.Enqueue(startText);
-        StartCoroutine(TypeWriterEffect.ShowInSucession(queue, StartScreenText, 0.01f, 0f));
+        StartCoroutine(TypeWriterEffect.TypeWithDelay(startTexts, StartScreenText, 0.01f, 0f));
         StartCoroutine(HideStartScreen(timeDelay));
     }
 }

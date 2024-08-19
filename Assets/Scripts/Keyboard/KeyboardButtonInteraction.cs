@@ -15,7 +15,10 @@ public class KeyboardButtonInteraction : ZoneInteraction
 
     private void Start()
     {
-        keyText.text = key.ToString().Replace("Alpha","");
+        if (keyText != null)
+        {
+            keyText.text = key.ToString().Replace("Alpha", "");
+        }
     }
 
     void Update()
