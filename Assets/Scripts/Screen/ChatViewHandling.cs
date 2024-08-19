@@ -42,9 +42,12 @@ public class ChatViewHandling : MonoBehaviour
     public void AddMessage(string text, TextAnchor anchor = TextAnchor.MiddleLeft, Color color = default)
     {
         GameObject newMessage = Instantiate(messagePrefab, contentElement.transform);
-        //newMessage.GetComponentInChildren<SpriteRenderer>().sprite = text.Length > 19 ? TwoLineBackground: OneLineBackground;
+        newMessage.GetComponentInChildren<SpriteRenderer>().sprite = text.Length > 10 ? TwoLineBackground: OneLineBackground;
         newMessage.GetComponentInChildren<TextMeshProUGUI>().text = text;
-        newMessage.GetComponent<HorizontalLayoutGroup>().childAlignment = anchor;
+        if(anchor != TextAnchor.MiddleLeft)
+        {
+            newMessage.GetComponent<RectTransform>().pivot = new Vector2(1f, 1f);
+        }
 
     }
 

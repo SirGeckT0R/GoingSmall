@@ -939,8 +939,8 @@ MonoBehaviour:
   messagePrefab: {fileID: 8488953794756441937, guid: 5bf254ebcd0287f4f80f27c4fe38c2bd, type: 3}
   contentElement: {fileID: 1450088382}
   OptionalSeconds: 45
-  OneLineBackground: {fileID: 0}
-  TwoLineBackground: {fileID: 0}
+  OneLineBackground: {fileID: 21300000, guid: e766f499a7ca22045abb3675b9985bc5, type: 3}
+  TwoLineBackground: {fileID: 21300000, guid: e48e016bc40d4934f99d2d416e6fd5dc, type: 3}
 --- !u!1 &154049151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,7 +3742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2599879388679816860, guid: 55e14a22a13d15848baa477b3355c7fe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2599879388679816860, guid: 55e14a22a13d15848baa477b3355c7fe, type: 3}
       propertyPath: m_TagString
@@ -5859,7 +5859,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.000013057941, y: 0.00036082984}
-  m_SizeDelta: {x: -189.08, y: 50}
+  m_SizeDelta: {x: -189.08, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1450088384
 MonoBehaviour:
@@ -5879,7 +5879,7 @@ MonoBehaviour:
     m_Top: 30
     m_Bottom: 20
   m_ChildAlignment: 5
-  m_Spacing: 20
+  m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -6836,7 +6836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2599879388679816860, guid: 55e14a22a13d15848baa477b3355c7fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2599879388679816860, guid: 55e14a22a13d15848baa477b3355c7fe, type: 3}
       propertyPath: m_TagString
