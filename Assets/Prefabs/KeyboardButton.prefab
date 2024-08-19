@@ -281,7 +281,7 @@ MonoBehaviour:
   _interactionTag: Player
   key: 0
   keyText: {fileID: 2265211772211062197}
-  cooldown: 0.8
+  cooldown: 1.2
 --- !u!1 &7224804888393524147
 GameObject:
   m_ObjectHideFlags: 0

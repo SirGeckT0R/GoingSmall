@@ -6,7 +6,7 @@ using static FileReader;
 
 public class UIManager : MonoBehaviour
 {
-    public delegate void StartScreenHidden();
+    public delegate void StartScreenHidden(TextMeshProUGUI element);
     public static event StartScreenHidden OnGameStarted;
 
     private List<GameText> _storyList;
@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         StartScreenUI?.SetActive(false);
-        OnGameStarted();
+        OnGameStarted(null);
     }
 
     private void ShowStartText(Queue<GameText> startTexts, int amountOfNonOptionalTexts)

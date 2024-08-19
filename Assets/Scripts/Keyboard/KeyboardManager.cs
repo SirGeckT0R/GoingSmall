@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class KeyboardManager : MonoBehaviour
 {
     public delegate void EnterPressed(string message);
     public static event EnterPressed OnEnterPressed;
+    [SerializeField] private TextMeshProUGUI InputStringUI;
 
     private string _typedMessage;
     private void OnEnable()
     {
         KeyboardButtonInteraction.OnButtonPressed += ButtonPressed;
+        StoryManager.OnAnswerSuccess += ClearMessage;
     }
 
     private void OnDisable()
     {
         KeyboardButtonInteraction.OnButtonPressed -= ButtonPressed;
+        StoryManager.OnAnswerSuccess -= ClearMessage;
     }
 
     private void ButtonPressed(KeyCode key)
@@ -26,12 +30,19 @@ public class KeyboardManager : MonoBehaviour
         }
         else if(key == KeyCode.Return)
         {
-            OnEnterPressed(_typedMessage);
+            OnEnterPressed(_typedMessage.ToLower());
         }
         else
         {
-            _typedMessage += key == KeyCode.Space ? " " : key.ToString().Replace("Alpha","");
+            _typedMessage += key == KeyCode.Space ? " " : key.ToString().ToLower().Replace("alpha","");
         }
+        InputStringUI.text = _typedMessage + "|";
         Debug.Log(_typedMessage);
+    }
+
+    private void ClearMessage()
+    {
+        _typedMessage = "";
+        InputStringUI.text = _typedMessage;
     }
 }

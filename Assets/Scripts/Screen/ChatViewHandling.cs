@@ -16,31 +16,36 @@ public class ChatViewHandling : MonoBehaviour
     [SerializeField] private GameObject messagePrefab;
     [SerializeField] private GameObject contentElement;
     [SerializeField] private float OptionalSeconds = 60f;
+    [SerializeField] private Sprite OneLineBackground;
+    [SerializeField] private Sprite TwoLineBackground;
     private IEnumerator _currentCoroutine;
 
 
     private void OnEnable()
     {
         StoryManager.OnAnswerSuccess += Success;
-        StoryManager.OnChatCompleted+= LoadChat;
+        StoryManager.OnPlayerMessaged += ShowPlayerMessage;
+        StoryManager.OnNextChatMessage+= LoadChat;
     }
 
     private void OnDisable()
     {
         StoryManager.OnAnswerSuccess -= Success;
-        StoryManager.OnChatCompleted -= LoadChat;
+        StoryManager.OnPlayerMessaged -= ShowPlayerMessage;
+        StoryManager.OnNextChatMessage -= LoadChat;
     }
     void Update()
-    { 
+    {
+        GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
     }
 
-    public void AddMessage(string text, TextAlignmentOptions alignment = default, Color color = default)
+    public void AddMessage(string text, TextAnchor anchor = TextAnchor.MiddleLeft, Color color = default)
     {
         GameObject newMessage = Instantiate(messagePrefab, contentElement.transform);
+        //newMessage.GetComponentInChildren<SpriteRenderer>().sprite = text.Length > 19 ? TwoLineBackground: OneLineBackground;
         newMessage.GetComponentInChildren<TextMeshProUGUI>().text = text;
-        //newMessage.GetComponentInChildren<TextMeshProUGUI>().alignment = alignment;
+        newMessage.GetComponent<HorizontalLayoutGroup>().childAlignment = anchor;
 
-        GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
     }
 
     private void LoadChat(Queue<GameText> chatTexts, int amountOfNonOptionalTexts, bool isFinalMessage)
@@ -71,6 +76,11 @@ public class ChatViewHandling : MonoBehaviour
         }
 
         OnChatFailed();
+    }
+
+    private void ShowPlayerMessage(string playerText, TextAnchor anchor = TextAnchor.MiddleRight, Color color = default)
+    {
+        AddMessage(playerText, anchor, color);
     }
 
     private void Success()

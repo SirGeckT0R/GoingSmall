@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Device;
 
 public enum E_Screen
 {
@@ -9,6 +10,11 @@ public enum E_Screen
     CHAT,
     CALL_APP,
     WEB_BROWSER,
+    BROWSER_TITLE_PAGE,
+    BROWSER_SEATS_PAGE,
+    BROWSER_CART_PAGE,
+    BROWSER_AD_PAGE,
+    BROWSER_END_PAGE,
 }
 
 public class ScreenManager : MonoBehaviour
@@ -19,11 +25,13 @@ public class ScreenManager : MonoBehaviour
     private void OnEnable()
     {
         ScreenButton.OnScreenButtonPressed += SwitchScreen;
+        SeatsPageScreenButton.OnSeatsButtonPressed += SwitchScreen;
     }
 
     private void OnDisable()
     {
         ScreenButton.OnScreenButtonPressed -= SwitchScreen;
+        SeatsPageScreenButton.OnSeatsButtonPressed -= SwitchScreen;
     }
     void Start()
     {
@@ -34,6 +42,10 @@ public class ScreenManager : MonoBehaviour
         foreach(Component child in children)
         {
             _collectionOfScreens.Add(child.gameObject);
+            if(child.gameObject.name.ToLower().Replace("_", "").Contains("web"))
+            {
+                continue;
+            }
             child.gameObject.SetActive(false);
         }
         

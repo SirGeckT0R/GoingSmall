@@ -228,4 +228,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037ed2502b2ce244bb7d3a1041cdbfbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShouldBeBlocked: 0
   ScreenToSwitch: 0

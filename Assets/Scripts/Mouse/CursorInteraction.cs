@@ -12,7 +12,7 @@ public class CursorInteraction : ZoneInteraction
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _button = null;
+        _button = _button == collision.gameObject.GetComponent<ScreenButton>() ? null: _button;
     }
 
     public void Interact()
