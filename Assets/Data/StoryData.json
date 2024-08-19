@@ -14,15 +14,7 @@
 	{ "text": "Can anything go right today?!" },
 	{ "text": "Now I need to call Dr. Hendricks." },
 	{ "text": "If I remember correctly, his number is +561 555 7689" },
-	{ "text": "Good day to you Mark!" },
-	{ "text": "How can I help you?" },
-	{ "text": "Your medicine made me tiny!" },
-	{ "text": "You need to fix it as fast as possible!" },
-	{ "text": "I see. Peculiar side effect..." },
-	{ "text": "I wonder why that happened..." },
-	{ "text": "Doc!!!!!" },
-	{ "text": "Oh, I’m sorry, Mark." },
-	{ "text": "I will drive to your place right away!" }
+	{ "text": "Good day to you Mark!$ How can I help you?$ Your medicine made me tiny!$ You need to fix it as fast as possible!$I see. Peculiar side effect...$I wonder why that happened...$Doc!!!!!$Oh, I’m sorry, Mark.$I will drive to your place right away!" }
 ],
 	"chatList": [
 	{ "text": "Weirdo" },

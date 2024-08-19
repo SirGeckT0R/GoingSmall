@@ -2,13 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Threading;
 using TMPro;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static FileReader;
-using static StoryManager;
 
 
 [RequireComponent(typeof(FileReader))]
@@ -33,7 +30,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private List<string> answers = new List<string>();
     private List<int> AmountOfMistakes = new List<int>() { 1, 2, 3, 0};
     private List<(int, int)> AmountOfChatMessages= new List<(int, int)>() { ( 3 ,1),( 4,2),(4,2),(1,1)};
-    private List<int> AmountOfStoryTexts= new List<int>() {1, 6, 1,1,3,2};
+    private List<int> AmountOfStoryTexts= new List<int>() {1, 6, 1,1,3,2, 1};
 
     private bool isFinalMessage = false;
     private bool isChatStarted = false;
@@ -45,6 +42,7 @@ public class StoryManager : MonoBehaviour
         ChatViewHandling.OnChatFailed += Fail;
         UIManager.OnGameStarted += ShowStoryText;
         BrowserExitButton.OnBrowserCompleted += BrowserSuccess;
+        GameEndButton.OnGameEnd += GameEnd;
     }
 
     private void OnDisable()
@@ -54,6 +52,7 @@ public class StoryManager : MonoBehaviour
         ChatViewHandling.OnChatFailed -= Fail;
         UIManager.OnGameStarted -= ShowStoryText;
         BrowserExitButton.OnBrowserCompleted -= BrowserSuccess;
+        GameEndButton.OnGameEnd -= GameEnd;
     }
     private void Update()
     {
@@ -101,7 +100,6 @@ public class StoryManager : MonoBehaviour
         message = Regex.Replace(message.ToLower().Trim(), @"\s+", " ");
         if (ValidateMessage(message))
         {
-            OnChatCompleted();
             OnAnswerSuccess();
             OnPlayerMessaged(message);
             ShowStoryText(textElement);
@@ -109,6 +107,7 @@ public class StoryManager : MonoBehaviour
             AmountOfMistakes.RemoveAt(0);
             if (answers.Count == 1)
             {
+                OnChatCompleted();
                 isFinalMessage = true;
             }
 
@@ -179,7 +178,6 @@ public class StoryManager : MonoBehaviour
         message = Regex.Replace(message.ToLower().Trim(), @"\s+", " ");
         if (ValidateMessage(message))
         {
-            ShowStoryText(textElement);
             answers.RemoveAt(0);
             AmountOfMistakes.RemoveAt(0);
 
@@ -188,5 +186,25 @@ public class StoryManager : MonoBehaviour
         }
 
         gameEndButton.CanExecute = false;
+    }
+
+    private void GameEnd(E_Screen screen)
+    {
+        StartCoroutine(ShowGameEnd(3f));
+    }
+
+    private IEnumerator ShowGameEnd(float screenDelay)
+    {
+        yield return new WaitForSeconds(screenDelay);
+        GetComponent<UIManager>().ShowEndScreen(new Queue<FileReader.GameText>(storyList.GetRange(0, AmountOfStoryTexts[0])));
+
+        storyList.RemoveRange(0, AmountOfStoryTexts[0]);
+        AmountOfStoryTexts.RemoveAt(0);
+
+        yield return new WaitForSeconds(30f);
+        GetComponent<UIManager>().ChangeEndScreenImage();
+        yield return new WaitForSeconds(10f);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }

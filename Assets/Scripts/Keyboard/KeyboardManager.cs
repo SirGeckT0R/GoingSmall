@@ -41,6 +41,7 @@ public class KeyboardManager : MonoBehaviour
             else if (key == KeyCode.Return)
             {
                 OnEnterPressed(_typedMessage.ToLower());
+                return;
             }
             else
             {

@@ -13,7 +13,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject StartScreenUI;
     [SerializeField] private TextMeshProUGUI StartScreenText;
-    [SerializeField] private GameObject EndScreenUI;
+    [SerializeField] private GameObject EndScreenDialogueUI;
+    [SerializeField] private GameObject EndScreenFinUI;
     [SerializeField] private TextMeshProUGUI EndScreenText;
     [SerializeField] private GameObject FailScreenUI;
     [SerializeField] private float timeDelay = 8f;
@@ -33,6 +34,7 @@ public class UIManager : MonoBehaviour
         StartScreenUI?.SetActive(true);
     }
 
+
     private IEnumerator HideStartScreen(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -48,5 +50,17 @@ public class UIManager : MonoBehaviour
 
     public void ShowFailScreen() { 
         FailScreenUI?.SetActive(true); 
+    }
+
+    public void ShowEndScreen(Queue<GameText> startTexts)
+    {
+        EndScreenDialogueUI?.SetActive(true);
+        StartCoroutine(TypeWriterEffect.TypeWithDelay(startTexts, EndScreenText, 0.01f, 2f));
+    }
+
+    public void ChangeEndScreenImage()
+    {
+        EndScreenDialogueUI?.SetActive(false);
+        EndScreenFinUI?.SetActive(true);
     }
 }
