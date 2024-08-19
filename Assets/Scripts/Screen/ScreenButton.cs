@@ -7,8 +7,8 @@ public class ScreenButton : MonoBehaviour
     public delegate void ScreenButtonPressed(E_Screen screen);
     public static event ScreenButtonPressed OnScreenButtonPressed;
 
-    protected bool CanExecute = false;
-    [SerializeField] protected bool ShouldBeBlocked = false;
+    public bool CanExecute = false;
+    [SerializeField] public bool ShouldBeBlocked = false;
 
     [SerializeField] protected E_Screen ScreenToSwitch;
 

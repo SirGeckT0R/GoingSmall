@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject StartScreenUI;
     [SerializeField] private TextMeshProUGUI StartScreenText;
     [SerializeField] private GameObject EndScreenUI;
+    [SerializeField] private TextMeshProUGUI EndScreenText;
+    [SerializeField] private GameObject FailScreenUI;
     [SerializeField] private float timeDelay = 8f;
 
     private void OnEnable()
@@ -42,5 +44,9 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(TypeWriterEffect.TypeWithDelay(startTexts, StartScreenText, 0.01f, 0f));
         StartCoroutine(HideStartScreen(timeDelay));
+    }
+
+    public void ShowFailScreen() { 
+        FailScreenUI?.SetActive(true); 
     }
 }
