@@ -25,7 +25,7 @@ public class ChatViewHandling : MonoBehaviour
     {
         StoryManager.OnAnswerSuccess += Success;
         StoryManager.OnPlayerMessaged += ShowPlayerMessage;
-        StoryManager.OnNextChatMessage+= LoadChat;
+        StoryManager.OnNextChatMessage += LoadChat;
     }
 
     private void OnDisable()
@@ -42,9 +42,12 @@ public class ChatViewHandling : MonoBehaviour
     public void AddMessage(string text, TextAnchor anchor = TextAnchor.MiddleLeft, Color color = default)
     {
         GameObject newMessage = Instantiate(messagePrefab, contentElement.transform);
-        //newMessage.GetComponentInChildren<SpriteRenderer>().sprite = text.Length > 19 ? TwoLineBackground: OneLineBackground;
+        newMessage.GetComponentInChildren<SpriteRenderer>().sprite = text.Length > 10 ? TwoLineBackground : OneLineBackground;
         newMessage.GetComponentInChildren<TextMeshProUGUI>().text = text;
-        newMessage.GetComponent<HorizontalLayoutGroup>().childAlignment = anchor;
+        if (anchor != TextAnchor.MiddleLeft)
+        {
+            newMessage.GetComponent<RectTransform>().pivot = new Vector2(1f, 1f);
+        }
 
     }
 
@@ -54,7 +57,7 @@ public class ChatViewHandling : MonoBehaviour
         StartCoroutine(_currentCoroutine);
     }
 
-    private IEnumerator ShowChatMessages(Queue<GameText> chatTexts, int amountOfNonOptionalTexts, float nonOptionalDelay, bool isFinalMessage,float optionalDelay = 60f)
+    private IEnumerator ShowChatMessages(Queue<GameText> chatTexts, int amountOfNonOptionalTexts, float nonOptionalDelay, bool isFinalMessage, float optionalDelay = 60f)
     {
         while (chatTexts.Count > 0 && (amountOfNonOptionalTexts-- > 0))
         {
@@ -85,6 +88,9 @@ public class ChatViewHandling : MonoBehaviour
 
     private void Success()
     {
-        StopCoroutine(_currentCoroutine);
+        if(_currentCoroutine != null)
+        {
+            StopCoroutine(_currentCoroutine);
+        }
     }
 }

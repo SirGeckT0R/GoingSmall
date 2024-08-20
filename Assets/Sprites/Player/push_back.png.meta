@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -108,7 +108,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: push_back_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 954
+        width: 149
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c042bd23c14ccda49a49cc8481ed92f2
+      internalID: -1476944499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 954
+        width: 149
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d368b3361d711584a8817b4c49aa1c3e
+      internalID: 672798766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_2
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 954
+        width: 149
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65c9f7bd43e44c4fb018e6b3dddb597
+      internalID: -630194829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_3
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 954
+        width: 149
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969a1fb4534ded54dbe59607f33fcc73
+      internalID: 169480582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_4
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 954
+        width: 149
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b399204d641328f43a5fb322f4421996
+      internalID: -427894975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_5
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 954
+        width: 149
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f5fd33a0bda8e4986cc6d539696d58
+      internalID: 35703726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_6
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 954
+        width: 149
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee152513b12159f4ab3ac7c97efb8221
+      internalID: 783193360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_7
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 956
+        width: 149
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d96905fd770e1943af19da57498138e
+      internalID: -1181834848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_9
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 956
+        width: 149
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97df131ac59b9c84f8784089b31baf94
+      internalID: -1761586535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_11
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 484
+        width: 149
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5c90c18cbd81241bee5dd49b4c1e1f
+      internalID: -2101068040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_13
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 480
+        width: 148
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c634e55602c07d46ac8188ea2f296c6
+      internalID: 2008517980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_14
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 480
+        width: 148
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0324b8d0189c96e4a93cd3058e7b042a
+      internalID: -1072373101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_15
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 480
+        width: 148
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b6f6d59a6867d468e726e87f499bdc
+      internalID: 624116899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_16
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 480
+        width: 148
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6bd976e6addeb4c805ceb24d40a308
+      internalID: -332975126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_17
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 481
+        width: 149
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c37e0b4e800ff45a3a1a452961d248
+      internalID: 1684750862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_18
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 481
+        width: 149
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d996210e723a47b479ccb50eb13dfa67
+      internalID: -563508602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_19
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 481
+        width: 149
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794399237fb1bf94f87887110dad5105
+      internalID: 1271345943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_20
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 489
+        width: 149
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffdb03ee36d87043aaa8860bbed0e6e
+      internalID: 476927302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_25
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 17
+        width: 149
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293f570eada5e6c439a238f21626f46d
+      internalID: -1112387354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_back_26
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 17
+        width: 149
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db84c9ea8bca2ea4f9e993352c4b00c7
+      internalID: 229921096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +539,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      push_back_0: -1476944499
+      push_back_1: 672798766
+      push_back_10: 397182466
+      push_back_11: -2101068040
+      push_back_12: 98518134
+      push_back_13: 2008517980
+      push_back_14: -1072373101
+      push_back_15: 624116899
+      push_back_16: -332975126
+      push_back_17: 1684750862
+      push_back_18: -563508602
+      push_back_19: 1271345943
+      push_back_2: -630194829
+      push_back_20: 476927302
+      push_back_21: -1526837758
+      push_back_22: 1978643357
+      push_back_23: 1947824100
+      push_back_24: -903678279
+      push_back_25: -1112387354
+      push_back_26: 229921096
+      push_back_3: 169480582
+      push_back_4: -427894975
+      push_back_5: 35703726
+      push_back_6: 783193360
+      push_back_7: -1181834848
+      push_back_8: 257485763
+      push_back_9: -1761586535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

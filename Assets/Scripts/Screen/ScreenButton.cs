@@ -10,7 +10,7 @@ public class ScreenButton : MonoBehaviour
     public bool CanExecute = false;
     [SerializeField] public bool ShouldBeBlocked = false;
 
-    [SerializeField] protected E_Screen ScreenToSwitch;
+    [SerializeField] public E_Screen ScreenToSwitch;
 
     private void OnEnable()
     {

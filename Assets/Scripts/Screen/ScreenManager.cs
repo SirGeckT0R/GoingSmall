@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Device;
+using static BrowserExitButton;
 
 public enum E_Screen
 {
@@ -20,6 +21,10 @@ public enum E_Screen
 
 public class ScreenManager : MonoBehaviour
 {
+
+    public delegate void BrowserFail();
+    public static event BrowserFail OnBrowserFailed;
+
     [SerializeField] private string tagOfScreens;
     private List<GameObject> _collectionOfScreens = new List<GameObject>();
     private GameObject _currentScreen;
@@ -27,13 +32,16 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private GameObject adScreen;
     [SerializeField] private ScreenButton browserButton;
     [SerializeField] private float adCooldown;
+    [SerializeField] private float failCooldown = 180f;
     private float _adTimer;
-    private bool isOnBrowserScreen;
+    private float _failTimer;
+    private bool isOnBrowserScreen = false;
+    private bool isBrowserCompleted = false;
     private void OnEnable()
     {
         ScreenButton.OnScreenButtonPressed += SwitchScreen;
         SeatsPageScreenButton.OnSeatsButtonPressed += SwitchScreen;
-        BrowserExitButton.OnBrowserCompleted += BlockBrowser;
+        BrowserExitButton.OnBrowserCompleted += CompleteBrowser;
         GameEndButton.OnGameEnd += SwitchScreen;
     }
 
@@ -41,7 +49,7 @@ public class ScreenManager : MonoBehaviour
     {
         ScreenButton.OnScreenButtonPressed -= SwitchScreen;
         SeatsPageScreenButton.OnSeatsButtonPressed -= SwitchScreen;
-        BrowserExitButton.OnBrowserCompleted -= BlockBrowser;
+        BrowserExitButton.OnBrowserCompleted -= CompleteBrowser;
         GameEndButton.OnGameEnd -= SwitchScreen;
     }
     void Start()
@@ -65,12 +73,20 @@ public class ScreenManager : MonoBehaviour
         if (isOnBrowserScreen)
         {
             _adTimer += Time.deltaTime;
+            _failTimer += Time.deltaTime;
+            if(_failTimer > failCooldown && !isBrowserCompleted)
+            {
+                OnBrowserFailed();
+                _failTimer = 0;
+            }
             if (_adTimer > adCooldown)
             {
                 _adTimer = 0;
                 adScreen.SetActive(true);
             }
+            return;
         }
+        _failTimer = 0f;
     }
 
     private void SwitchScreen(E_Screen screenToSwitchTo)
@@ -80,17 +96,17 @@ public class ScreenManager : MonoBehaviour
         _currentScreen = _collectionOfScreens.Find(
             (screen) =>screen.name.ToLower().Contains(screenName)
             );
-        if (_currentScreen.name.ToLower().Contains("browsertitle"))
+        if (_currentScreen.name.ToLower().Contains("browser"))
         {
             isOnBrowserScreen = true;
         }
         _currentScreen?.SetActive(true);
     }
 
-    private void BlockBrowser(E_Screen screenToSwitchTo)
+    private void CompleteBrowser(E_Screen screenToSwitchTo)
     {
+        isBrowserCompleted = true;
         isOnBrowserScreen = false;
-        browserButton.ShouldBeBlocked = true;
         SwitchScreen(screenToSwitchTo);
     }
 }

@@ -8,6 +8,9 @@ public class KeyboardButtonInteraction : ZoneInteraction
     [SerializeField] private KeyCode key = KeyCode.None;
     [SerializeField] private TextMeshProUGUI keyText;
     [SerializeField] private float cooldown = 0.8f;
+    [SerializeField] private float pressedAnimationDuration = 0.4f;
+    [SerializeField] private Sprite defaultSprite;
+    [SerializeField] private Sprite pressedSprite;
     private float timer = 0f;
 
     public delegate void ButtonPress(KeyCode pressedKey);
@@ -26,11 +29,21 @@ public class KeyboardButtonInteraction : ZoneInteraction
         if (_isObjectInside)
         {
             timer += Time.deltaTime;
-            if(timer > cooldown)
+            GetComponent<SpriteRenderer>().sprite = pressedSprite;
+            if (timer > pressedAnimationDuration)
+            {
+                GetComponent<SpriteRenderer>().sprite = defaultSprite;
+            }
+            if (timer > cooldown)
             {
                 timer = 0f;
                 Execute();
             }
+        }
+        else
+        {
+            timer = 0f;
+            GetComponent<SpriteRenderer>().sprite = defaultSprite;
         }
     }
 

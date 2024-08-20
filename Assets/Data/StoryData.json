@@ -1,6 +1,6 @@
 {
     "storyList": [
-	{ "text": "Whoa, that medicine they gave me is making me sleepy.$ I guess that’s why they are testing it before they could sell that as a headache drug.$ Anyway, better not miss the date with Alice.$ After all, I only applied for testing so I can get some money to buy us movie tickets.$ I am just going to lie down for a moment..." },
+	{ "text": "Mark: Whoa, that medicine they gave me is making me sleepy.$Mark: I guess that’s why they are testing it before they could sell that as a headache med.$Mark: Anyway, better not miss the date with Alice.$Mark: After all, I only applied for testing so I can get some money to buy us movie tickets.$Mark: I am just going to lie down for a moment..." },
 	{ "text": "Wha-What?! What is happening?! Why am I tiny?!" },
 	{ "text": "Damn it! Must be a side effect from that medicine!" },
 	{ "text": "I need to call Dr. Hendricks, see if he could revert this somehow…" },
@@ -12,6 +12,7 @@
 	{ "text": "Phew, that was close." },
 	{ "text": "Oh! I forgot to buy the tickets!" },
 	{ "text": "Can anything go right today?!" },
+	{ "text": "I have like 2 minutes to buy them." },
 	{ "text": "Now I need to call Dr. Hendricks." },
 	{ "text": "If I remember correctly, his number is +561 555 7689" },
 	{ "text": "Dr. Hendricks: Good day to you Mark!$Dr. Hendricks: How can I help you?$Mark: Your medicine made me tiny!$Mark: You need to fix it as fast as possible!$Dr. Hendricks: I see. Peculiar side effect...$Dr. Hendricks: I wonder why that happened...$Mark: Doc!!!!!$Dr. Hendricks: Oh, I’m sorry, Mark.$Dr. Hendricks: I will drive to your place right away!" }

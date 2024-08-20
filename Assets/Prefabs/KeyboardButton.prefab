@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.5019608, g: 0.14901961, b: 0.14509805, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -282,6 +282,9 @@ MonoBehaviour:
   key: 0
   keyText: {fileID: 2265211772211062197}
   cooldown: 1.2
+  pressedAnimationDuration: 0.4
+  defaultSprite: {fileID: 0}
+  pressedSprite: {fileID: 0}
 --- !u!1 &7224804888393524147
 GameObject:
   m_ObjectHideFlags: 0

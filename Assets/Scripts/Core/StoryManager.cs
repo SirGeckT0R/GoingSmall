@@ -30,7 +30,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private List<string> answers = new List<string>();
     private List<int> AmountOfMistakes = new List<int>() { 1, 2, 3, 0};
     private List<(int, int)> AmountOfChatMessages= new List<(int, int)>() { ( 3 ,1),( 4,2),(4,2),(1,1)};
-    private List<int> AmountOfStoryTexts= new List<int>() {1, 6, 1,1,3,2, 1};
+    private List<int> AmountOfStoryTexts= new List<int>() {1, 6, 1,1,4,2, 1};
 
     private bool isFinalMessage = false;
     private bool isChatStarted = false;
@@ -42,6 +42,7 @@ public class StoryManager : MonoBehaviour
         ChatViewHandling.OnChatFailed += Fail;
         UIManager.OnGameStarted += ShowStoryText;
         BrowserExitButton.OnBrowserCompleted += BrowserSuccess;
+        ScreenManager.OnBrowserFailed += Fail;
         GameEndButton.OnGameEnd += GameEnd;
     }
 
@@ -52,6 +53,7 @@ public class StoryManager : MonoBehaviour
         ChatViewHandling.OnChatFailed -= Fail;
         UIManager.OnGameStarted -= ShowStoryText;
         BrowserExitButton.OnBrowserCompleted -= BrowserSuccess;
+        ScreenManager.OnBrowserFailed -= Fail;
         GameEndButton.OnGameEnd -= GameEnd;
     }
     private void Update()
@@ -80,12 +82,7 @@ public class StoryManager : MonoBehaviour
     {
         if (!isChatStarted)
         {
-            List<FileReader.GameText> listToSend = chatList.GetRange(1, AmountOfChatMessages[0].Item1);
-            listToSend.Add(chatList[0]);
-            chatList.RemoveRange(1, AmountOfChatMessages[0].Item1);
-            OnNextChatMessage(new Queue<FileReader.GameText>(listToSend), AmountOfChatMessages[0].Item2, isFinalMessage);
-            AmountOfChatMessages.RemoveAt(0);
-            isChatStarted = true;
+            StartCoroutine(ShowFirstChatMessage());
         }
         if(element == null)
         {
@@ -95,10 +92,21 @@ public class StoryManager : MonoBehaviour
         storyList.RemoveRange(0, AmountOfStoryTexts[0]);
         AmountOfStoryTexts.RemoveAt(0);
     }
+
+    private IEnumerator ShowFirstChatMessage()
+    {
+        yield return new WaitForSeconds(14f);
+        List<FileReader.GameText> listToSend = chatList.GetRange(1, AmountOfChatMessages[0].Item1);
+        listToSend.Add(chatList[0]);
+        chatList.RemoveRange(1, AmountOfChatMessages[0].Item1);
+        OnNextChatMessage(new Queue<FileReader.GameText>(listToSend), AmountOfChatMessages[0].Item2, isFinalMessage);
+        AmountOfChatMessages.RemoveAt(0);
+        isChatStarted = true;
+    }
     private void CheckMessage(string message)
     {
         message = Regex.Replace(message.ToLower().Trim(), @"\s+", " ");
-        if (ValidateMessage(message))
+        if (ValidateMessage(message) && isChatStarted)
         {
             OnAnswerSuccess();
             OnPlayerMessaged(message);
@@ -170,6 +178,7 @@ public class StoryManager : MonoBehaviour
 
     private void BrowserSuccess(E_Screen screen)
     {
+
         ShowStoryText(textElement);
     }
 

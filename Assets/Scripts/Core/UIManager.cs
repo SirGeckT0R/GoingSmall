@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     private List<GameText> _storyList;
 
+    [SerializeField] private ScreenButton CallAppButton;
+    [SerializeField] private ScreenButton BrowserAppButton;
     [SerializeField] private GameObject StartScreenUI;
     [SerializeField] private TextMeshProUGUI StartScreenText;
     [SerializeField] private GameObject EndScreenDialogueUI;
@@ -22,11 +24,13 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         StoryManager.OnStoryLoaded += ShowStartText;
+        BrowserExitButton.OnBrowserCompleted += UnlockCallApp;
     }
 
     private void OnDisable()
     {
         StoryManager.OnStoryLoaded -= ShowStartText;
+        BrowserExitButton.OnBrowserCompleted -= UnlockCallApp;
     }
 
     private void Start()
@@ -62,5 +66,11 @@ public class UIManager : MonoBehaviour
     {
         EndScreenDialogueUI?.SetActive(false);
         EndScreenFinUI?.SetActive(true);
+    }
+
+    public void UnlockCallApp(E_Screen screen)
+    {
+        CallAppButton.CanExecute = true;
+        BrowserAppButton.ScreenToSwitch = E_Screen.BROWSER_END_PAGE;
     }
 }

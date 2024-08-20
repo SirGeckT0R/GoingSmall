@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -108,7 +108,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: push_left_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1522
+        width: 206
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98dc79aaef57b5449a7a9875cffaacf3
+      internalID: -1971905262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_3
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1522
+        width: 206
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e44c1aec4968684a891a322b7a36989
+      internalID: -1727589540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_5
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1522
+        width: 206
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9cb44d6670da84e847920d402e7fef
+      internalID: 251479908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_7
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1522
+        width: 206
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3325b29aea5524ba4050901ecf3977
+      internalID: -463402480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_8
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1519
+        width: 216
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1861a5a1f738940ad26ce329b19c82
+      internalID: 2062864471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1019
+        width: 216
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2962458cb1ee1c043bde6137895e12f1
+      internalID: 1409700270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1019
+        width: 216
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7bbc62c2a96d844095ec357e2938c82
+      internalID: -1368897312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_15
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1018
+        width: 237
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed52ab92bc0ea184c89d12e853912535
+      internalID: -1861444012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_17
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1018
+        width: 237
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf58f84bd29f374b97dccf35657c9dc
+      internalID: 715865259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_19
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1018
+        width: 237
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cdb2a9af5fffb34ba3c09ba09e504b8
+      internalID: 483032624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_21
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 519
+        width: 223
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e667228bcfa5364b8d7c1b9869e2559
+      internalID: -1892178999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_23
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 519
+        width: 223
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb1b76af54d35343916afb8188d0d04
+      internalID: -610001367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_25
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 519
+        width: 223
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58173027949315409e2d720a395767d
+      internalID: 1512740115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_27
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 519
+        width: 223
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adaa93c709cead34688af884f12e6b0b
+      internalID: 1641718387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_29
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 519
+        width: 226
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2feb9730471a8d5488bd3ea3279fb99f
+      internalID: 1104847268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_31
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 19
+        width: 226
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f55f66fc257431418227e31161b474c
+      internalID: -2029878194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_33
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 19
+        width: 226
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ae3b52ae862544c86fbc6a06cdab77
+      internalID: -1028070389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_35
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 18
+        width: 237
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b26e076913e6c94199be7684c02f6bb
+      internalID: 1126107525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_37
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 18
+        width: 237
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9558c31647728439171ff88d30e134
+      internalID: 1226784293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: push_left_39
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 18
+        width: 237
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51ff60d1b4c40f4a85a4bf623513512
+      internalID: -1467115006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +539,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      push_left_0: 1863613822
+      push_left_1: -1971905262
+      push_left_10: 1812545304
+      push_left_11: 1409700270
+      push_left_12: 1667168072
+      push_left_13: -1368897312
+      push_left_14: 542090067
+      push_left_15: -1861444012
+      push_left_16: -477903462
+      push_left_17: 715865259
+      push_left_18: -856012086
+      push_left_19: 483032624
+      push_left_2: 1110717912
+      push_left_20: 742310809
+      push_left_21: -1892178999
+      push_left_22: 986286760
+      push_left_23: -610001367
+      push_left_24: 133196914
+      push_left_25: 1512740115
+      push_left_26: 713733368
+      push_left_27: 1641718387
+      push_left_28: -1276954741
+      push_left_29: 1104847268
+      push_left_3: -1727589540
+      push_left_30: 1270226849
+      push_left_31: -2029878194
+      push_left_32: -750817116
+      push_left_33: -1028070389
+      push_left_34: -1115436751
+      push_left_35: 1126107525
+      push_left_36: 131889188
+      push_left_37: 1226784293
+      push_left_38: -2145917923
+      push_left_39: -1467115006
+      push_left_4: -425082334
+      push_left_5: 251479908
+      push_left_6: -1714573239
+      push_left_7: -463402480
+      push_left_8: 2062864471
+      push_left_9: -1813743763
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
