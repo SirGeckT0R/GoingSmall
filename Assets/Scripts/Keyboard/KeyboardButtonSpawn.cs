@@ -36,7 +36,7 @@ public class KeyboardButtonSpawn : MonoBehaviour
         Vector3 posOwner = transform.position + new Vector3(-_sizeOfKeyboard.x / 2, _sizeOfKeyboard.y / 2, 0);
         for (int i = 0; i < amountOfKeys; i++)
         {
-            GameObject keyButton = (GameObject)PrefabUtility.InstantiatePrefab(ButtonPrefab, transform);
+            GameObject keyButton = (GameObject)Instantiate(ButtonPrefab, transform);
             if (currentColumn >= cols)
             {
                 currentRow++;

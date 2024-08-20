@@ -33,7 +33,7 @@ public class ScreenManager : MonoBehaviour
     {
         ScreenButton.OnScreenButtonPressed += SwitchScreen;
         SeatsPageScreenButton.OnSeatsButtonPressed += SwitchScreen;
-        BrowserExitButton.OnBrowserCompleted += SwitchScreen;
+        BrowserExitButton.OnBrowserCompleted += BlockBrowser;
         GameEndButton.OnGameEnd += SwitchScreen;
     }
 
@@ -41,7 +41,7 @@ public class ScreenManager : MonoBehaviour
     {
         ScreenButton.OnScreenButtonPressed -= SwitchScreen;
         SeatsPageScreenButton.OnSeatsButtonPressed -= SwitchScreen;
-        BrowserExitButton.OnBrowserCompleted -= SwitchScreen;
+        BrowserExitButton.OnBrowserCompleted -= BlockBrowser;
         GameEndButton.OnGameEnd -= SwitchScreen;
     }
     void Start()
