@@ -21,6 +21,7 @@ public enum E_Screen
 
 public class ScreenManager : MonoBehaviour
 {
+    public static ScreenManager Instance { get; private set; }
 
     public delegate void BrowserFail();
     public static event BrowserFail OnBrowserFailed;
@@ -32,16 +33,30 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private GameObject adScreen;
     [SerializeField] private ScreenButton browserButton;
     [SerializeField] private float adCooldown;
-    [SerializeField] private float failCooldown = 180f;
+    [SerializeField] private float failCooldown = 240f;
     private float _adTimer;
     private float _failTimer;
     private bool isOnBrowserScreen = false;
     private bool isBrowserCompleted = false;
+    public bool isAdActive = false;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     private void OnEnable()
     {
         ScreenButton.OnScreenButtonPressed += SwitchScreen;
         SeatsPageScreenButton.OnSeatsButtonPressed += SwitchScreen;
         BrowserExitButton.OnBrowserCompleted += CompleteBrowser;
+        BrowserExitButton.OnScreenButtonPressed += CompleteBrowser;
         GameEndButton.OnGameEnd += SwitchScreen;
     }
 
@@ -50,6 +65,7 @@ public class ScreenManager : MonoBehaviour
         ScreenButton.OnScreenButtonPressed -= SwitchScreen;
         SeatsPageScreenButton.OnSeatsButtonPressed -= SwitchScreen;
         BrowserExitButton.OnBrowserCompleted -= CompleteBrowser;
+        BrowserExitButton.OnScreenButtonPressed -= CompleteBrowser;
         GameEndButton.OnGameEnd -= SwitchScreen;
     }
     void Start()
@@ -72,7 +88,10 @@ public class ScreenManager : MonoBehaviour
     {
         if (isOnBrowserScreen)
         {
-            _adTimer += Time.deltaTime;
+            if (!isAdActive)
+            {
+                _adTimer += Time.deltaTime;
+            }
             _failTimer += Time.deltaTime;
             if(_failTimer > failCooldown && !isBrowserCompleted)
             {
@@ -82,6 +101,7 @@ public class ScreenManager : MonoBehaviour
             if (_adTimer > adCooldown)
             {
                 _adTimer = 0;
+                isAdActive = true;
                 adScreen.SetActive(true);
             }
             return;

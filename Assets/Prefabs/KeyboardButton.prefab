@@ -210,7 +210,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c004eaf619f61e74793158584bf3988e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96877c03c76f80742b938afb1e86a139, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -257,7 +257,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.27, y: 1.33}
+    oldSize: {x: 1.47, y: 1.47}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -283,8 +283,9 @@ MonoBehaviour:
   keyText: {fileID: 2265211772211062197}
   cooldown: 1.2
   pressedAnimationDuration: 0.4
-  defaultSprite: {fileID: 0}
-  pressedSprite: {fileID: 0}
+  defaultSprite: {fileID: 21300000, guid: 96877c03c76f80742b938afb1e86a139, type: 3}
+  pressedSprite: {fileID: 21300000, guid: 43c4509766a1ad845b1d1dfd2d3de4f2, type: 3}
+  pressedSound: {fileID: 8300000, guid: b72924758f25e754cbe2de6b3254be60, type: 3}
 --- !u!1 &7224804888393524147
 GameObject:
   m_ObjectHideFlags: 0

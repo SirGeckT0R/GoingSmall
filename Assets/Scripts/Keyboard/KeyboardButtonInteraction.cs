@@ -11,6 +11,7 @@ public class KeyboardButtonInteraction : ZoneInteraction
     [SerializeField] private float pressedAnimationDuration = 0.4f;
     [SerializeField] private Sprite defaultSprite;
     [SerializeField] private Sprite pressedSprite;
+    [SerializeField] private AudioClip pressedSound;
     private float timer = 0f;
 
     public delegate void ButtonPress(KeyCode pressedKey);
@@ -49,6 +50,7 @@ public class KeyboardButtonInteraction : ZoneInteraction
 
     protected override void Execute()
     {
+        SoundManager.Instance.PlaySound(pressedSound);
         OnButtonPressed(key);
         Debug.Log("Pressed the button");
     }

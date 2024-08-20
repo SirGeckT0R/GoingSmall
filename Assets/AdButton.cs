@@ -6,6 +6,7 @@ public class AdButton : ScreenButton
 {
     public override void Execute()
     {
+        ScreenManager.Instance.isAdActive = false;
         transform.parent.gameObject.SetActive(false);
     }
 }

@@ -14,6 +14,7 @@ public class MouseInteraction : ZoneInteraction
     [SerializeField] private float pressedAnimationDuration = 0.4f;
     [SerializeField] private Sprite defaultSprite;
     [SerializeField] private Sprite pressedSprite;
+    [SerializeField] private AudioClip pressedSound;
     private void Start()
     {
         _cursor = transform.parent.GetComponent<CursorHandling>().cursorTransform.GetComponent<CursorInteraction>();
@@ -23,7 +24,7 @@ public class MouseInteraction : ZoneInteraction
     {
         if (_isObjectInside && Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("Left mouse clicked");
+            SoundManager.Instance.PlaySound(pressedSound);
             _cursor.Interact();
             _isMouseButtonPressed = true;
         }

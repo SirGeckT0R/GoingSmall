@@ -9,7 +9,8 @@ public class UIManager : MonoBehaviour
     public delegate void StartScreenHidden(TextMeshProUGUI element);
     public static event StartScreenHidden OnGameStarted;
 
-    private List<GameText> _storyList;
+    private IEnumerator _startTextEnumerator;
+    private bool CheckStartScreen = true;
 
     [SerializeField] private ScreenButton CallAppButton;
     [SerializeField] private ScreenButton BrowserAppButton;
@@ -19,7 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject EndScreenFinUI;
     [SerializeField] private TextMeshProUGUI EndScreenText;
     [SerializeField] private GameObject FailScreenUI;
-    [SerializeField] private float timeDelay = 8f;
+    [SerializeField] private float timeDelay = 16f;
 
     private void OnEnable()
     {
@@ -38,10 +39,20 @@ public class UIManager : MonoBehaviour
         StartScreenUI?.SetActive(true);
     }
 
+    private void Update()
+    {
+        if(CheckStartScreen && _startTextEnumerator != null && Input.anyKey)
+        {
+            CheckStartScreen = false;
+            StopCoroutine(_startTextEnumerator);
+            StartCoroutine(HideStartScreen(0));
+        }
+    }
 
     private IEnumerator HideStartScreen(float delay)
     {
         yield return new WaitForSeconds(delay);
+        CheckStartScreen = false;
         StartScreenUI?.SetActive(false);
         OnGameStarted(null);
     }
@@ -49,7 +60,8 @@ public class UIManager : MonoBehaviour
     private void ShowStartText(Queue<GameText> startTexts, int amountOfNonOptionalTexts)
     {
         StartCoroutine(TypeWriterEffect.TypeWithDelay(startTexts, StartScreenText, 0.01f, 0f));
-        StartCoroutine(HideStartScreen(timeDelay));
+        _startTextEnumerator = HideStartScreen(timeDelay);
+        StartCoroutine(_startTextEnumerator);
     }
 
     public void ShowFailScreen() { 

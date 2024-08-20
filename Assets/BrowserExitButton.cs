@@ -6,8 +6,20 @@ public class BrowserExitButton : ScreenButton
 {
     public delegate void BrowserCompleted(E_Screen screen);
     public static event BrowserCompleted OnBrowserCompleted;
+    public delegate void ScreenButtonPressed(E_Screen screen);
+    public static event ScreenButtonPressed OnScreenButtonPressed;
+
+    public bool isCompleted = false;
     public override void Execute()
     {
-        OnBrowserCompleted(ScreenToSwitch);
+        if (!isCompleted)
+        {
+            isCompleted = true;
+            OnBrowserCompleted(ScreenToSwitch);
+        }
+        else
+        {
+            OnScreenButtonPressed(ScreenToSwitch);
+        }
     }
 }
