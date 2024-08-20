@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI EndScreenText;
     [SerializeField] private GameObject FailScreenUI;
     [SerializeField] private float timeDelay = 16f;
+    private float startTimer = 0f;
 
     private void OnEnable()
     {
@@ -41,11 +42,18 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if(CheckStartScreen && _startTextEnumerator != null && Input.anyKey)
+        if (startTimer < 2f)
+        { 
+            startTimer += Time.deltaTime;
+        }
+        else
         {
-            CheckStartScreen = false;
-            StopCoroutine(_startTextEnumerator);
-            StartCoroutine(HideStartScreen(0));
+            if (CheckStartScreen && _startTextEnumerator != null && Input.anyKey)
+            {
+                CheckStartScreen = false;
+                StopCoroutine(_startTextEnumerator);
+                StartCoroutine(HideStartScreen(0));
+            }
         }
     }
 

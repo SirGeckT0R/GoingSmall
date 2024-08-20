@@ -213,7 +213,7 @@ public class StoryManager : MonoBehaviour
         yield return new WaitForSeconds(30f);
         GetComponent<UIManager>().ChangeEndScreenImage();
         yield return new WaitForSeconds(10f);
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene - 1);
     }
 }
